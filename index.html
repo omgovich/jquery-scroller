@@ -147,18 +147,12 @@
 
 			<h2 id="api-part">API</h2>
 			<section id="api">
-				<ul>
-					<li><img src="demo/upload/image-1.jpg" alt="Image" /></li>
-					<li><img src="demo/upload/image-2.jpg" alt="Image" /></li>
-					<li><img src="demo/upload/image-3.jpg" alt="Image" /></li>
-					<li><img src="demo/upload/image-4.jpg" alt="Image" /></li>
-					<li class="last"><img src="demo/upload/image-5.jpg" alt="Image" /></li>
-				</ul>
+				<img src="demo/upload/panorama-1.jpg" alt="Image" style="width:1600px;height:200px;" />
 			</section>
 			
 			<ul>
 				<li><button onclick="$('#api').data('scroller').disable();">Disable</button> / <button onclick="$('#api').data('scroller').enable();">Enable</button></li>
-				<li><button onclick="alert($('#api').data('scroller').getStatus());">Get status</button></li>
+				<li><button onclick="alert('Enabled? - ' + $('#api').data('scroller').getStatus());">Get status</button></li>
 				<li><button onclick="alert($('#api').data('scroller').getOffset());">Get offset</button></li>
 			</ul>
 			
@@ -176,6 +170,37 @@ scroller.enable();
 scroller.getStatus();
 scroller.getOffset();</code></pre>
 
+
+			<!-- ... -->
+
+			<h2 id="options-part">Options</h2>
+			<table>
+				<tr>
+					<th>Key</th>
+					<th>Default value</th>
+					<th>Description</th>
+				</tr>
+				<tr>
+					<td><code>interval</code></td>
+					<td><code>10</code></td>
+					<td>Time between each call to the function that does the scrolling.</td>
+				</tr>
+				<tr>
+					<td><code>step</code></td>
+					<td><code>5</code></td>
+					<td>How many pixels the scrollable area should move in each scrolling cycle.</td>
+				</tr>
+				<tr>
+					<td><code>direction</code></td>
+					<td><code>'horizontal'</code></td>
+					<td>Scrolling direction &mdash; <code>'horizontal'</code> or <code>'vertical'</code>.</td>
+				</tr>
+				<tr>
+					<td><code>fixed</code></td>
+					<td><code>'.fixed'</code></td>
+					<td>Selector of fixed object inside the scroller. </td>
+				</tr>
+			</table>
 
 			<!-- ... -->
 
