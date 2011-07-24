@@ -124,6 +124,7 @@ pre code {
 
 /*** --- Sections --- ***/
 section {
+	position:relative;
 	overflow:hidden;
 	height:200px;
 	margin-bottom:25px;

@@ -1,6 +1,6 @@
 /*
  * jQuery Plugin: Scroller
- * Version 0.2
+ * Version 0.3
  *
  * Copyright (c) 2011 Shilov Vlad [Omgovich] (http://omgovich.ru)
  * No copyrights or licenses. Do what you want!
@@ -19,10 +19,10 @@
 			fixed:		'.fixed'
 		}, options);
 	
-		// {Event} Content ready
+		// Install scroller for each items
 		this.each(function(){
-	
-			//** Variables
+
+			//** --- Variables --- **//
 			var cursor = {
 				position:	0
 			};
@@ -31,19 +31,19 @@
 				offset:	0
 			};
 			var scroller = {
+				enabled:true,
 				offset:	0,
 				ratio:	0,
 				size:	0
 			};
 			var animation;
 	
-			//** Objects
-			var $body = $('body');
+			// Objects
 			var $scroller = $(this);
 			var $data = $scroller.wrapInner('<div class="slide-wrap"><div class="slide-data" /></div>').find('.slide-data');
 			var $fixed = $scroller.find(settings.fixed);
 	
-			//** Sizes and offsets
+			// Sizes and offsets
 			if (settings.direction=='vertical') {
 				$scroller.addClass('vertical-slide-pane');
 				data.size = $data.height();
@@ -55,10 +55,11 @@
 				scroller.offset = $scroller.offset().left;
 				scroller.size = $scroller.width();
 			}
+
+
+			//** --- Implementation --- **//
 	
-			//** Implementation
-	
-			// {EVENT} Mousemove
+			// event: Mousemove on scroller
 			$scroller.mousemove(function(event){
 				if (settings.direction == 'vertical') {
 					cursor.position = event.pageY - scroller.offset;
@@ -68,10 +69,10 @@
 				scroller.ratio = ((cursor.position+scroller.size)/(scroller.size)-1.5)*2;
 			});
 	
-			// {EVENT} Mouseenter/Mouseover on scroller
+			// event: Mouseenter/Mouseover on scroller
 			$scroller.hover(function(){
 				clearInterval(animation);
-				if (data.size > scroller.size) {
+				if ((data.size > scroller.size) && (scroller.enabled)) {
 					$data.stop();
 					animation = setInterval(function(){
 						data.offset = Math.min(0, data.offset - scroller.ratio * settings.step);
@@ -90,7 +91,7 @@
 				clearInterval(animation);
 			});
 	
-			// {EVENT} Window resize - recalculate offset
+			// event: Window resize - recalculate offset
 			$(window).resize(function(){
 				if (settings.direction == 'vertical') {
 					scroller.offset = $scroller.offset().top;
@@ -98,7 +99,31 @@
 					scroller.offset = $scroller.offset().left;
 				}
 			});
-	
+			
+			
+			//** --- API --- **//
+			var api = {
+				disable:	function(){
+					$scroller.addClass('disabled');
+					scroller.enabled = false;
+					return true;
+				},
+				enable:		function(){
+					$scroller.removeClass('disabled');
+					scroller.enabled = true;
+					return true;
+				},
+				getStatus:	function(){
+					return scroller.enabled;
+				},
+				getOffset:	function(){
+					return data.offset;
+				},
+				getRatio:	function(){
+					return scroller.ratio;
+				}
+			}
+			$scroller.data('scroller', api);
 	
 		});
 	
