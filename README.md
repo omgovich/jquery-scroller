@@ -1,6 +1,6 @@
-# jQuery Changer
+# jQuery Scroller
 
-Lightweight jQuery tabs plugin
+jQuery plugin that scrolls content based on mouse position.
 
 ## Demo
 
@@ -12,12 +12,12 @@ Lightweight jQuery tabs plugin
 HTML:
 
     <script src="path/to/jquery.js"></script>
-    <script src="path/to/jquery.changer.js"></script>
+    <script src="path/to/jquery.scroller.js"></script>
 
 JavaScript:
 
     $(function(){
-        $('#basic ul').changer();
+        $('#basic').scroller();
     });
 
 
