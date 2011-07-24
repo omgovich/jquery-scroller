@@ -112,8 +112,6 @@ article a[target="_blank"] {
 
 /* Code */
 code {
-	padding:0 2px;
-	background:rgba(0,0,0,0.05);
 	color:#111;
 	font-family:monospace;
 }
@@ -136,6 +134,24 @@ article ol li {
 	list-style:decimal;
 }
 
+/* Tables */
+article table {
+	width:100%;
+	margin:0 auto 15px;
+	border:1px solid #CCC;
+	border-collapse:collapse;
+}
+article table th, article table td {
+	text-align:left;
+	vertical-align:top;
+	padding:5px 10px;
+	border:1px solid #CCC;
+}
+article table th {
+	font-weight:bold;
+	background:#f2f2f8;
+}
+
 
 /*** --- Sections --- ***/
 section {
@@ -151,7 +167,7 @@ section {
 	box-shadow:0 1px 4px #999;
 }
 section.disabled {
-	opacity:0.5;
+	opacity:0.6;
 }
 article section ul {
 	margin:0;

@@ -20,6 +20,14 @@ JavaScript:
         $('selector').scroller();
     });
 
+CSS:
+
+    selector {
+        position: relative;
+        overflow: hidden;
+        height: <value>;
+    }
+
 
 ## Tested in browsers:
 
