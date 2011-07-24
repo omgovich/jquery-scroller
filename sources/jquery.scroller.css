@@ -1,14 +1,14 @@
 /*
- * jQuery Plugin: Changer
- * Version 0.2
+ * jQuery Plugin: Scroller
+ * Version 0.3
  *
  * Copyright (c) 2011 Shilov Vlad [Omgovich] (http://omgovich.ru)
  * No copyrights or licenses. Do what you want!
  * 
  */
 .slide-pane, .vertical-slide-pane {
-	overflow:hidden;
 	position:relative;
+	overflow:hidden;
 }
 .slide-pane .slide-wrap {
 	position:relative;

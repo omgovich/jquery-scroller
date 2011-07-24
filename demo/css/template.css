@@ -33,6 +33,8 @@ h1 {
 h2 {
 	font-size:24px;
 	padding:50px 0 15px;
+	margin-top:50px;
+	border-top:1px dashed #999;
 }
 
 
@@ -105,7 +107,7 @@ article {
 /* Links */
 article a[target="_blank"] {
 	padding-right:11px;
-	background:url(../images/link_blank_bg.gif) no-repeat 100% 5px;
+	background:url(../images/link_blank_bg.gif) no-repeat 100% 6px;
 }
 
 /* Code */
@@ -118,12 +120,26 @@ code {
 pre code {
 	padding:15px;
 	margin-bottom:15px;
-	/*background:#fafafa;*/
 	border:1px solid #DDD;
 }
 
+/* List */
+article ul, article ol {
+	margin:0 0 10px 20px;
+}
+article ul li, article ol li {
+	list-style:square;
+	margin-left:5px;
+	padding-bottom:5px;
+}
+article ol li {
+	list-style:decimal;
+}
+
+
 /*** --- Sections --- ***/
 section {
+	position:relative;
 	overflow:hidden;
 	height:200px;
 	margin-bottom:25px;
@@ -134,14 +150,23 @@ section {
 	-moz-box-shadow:0 1px 4px #999;
 	box-shadow:0 1px 4px #999;
 }
-section ul li {
+section.disabled {
+	opacity:0.5;
+}
+article section ul {
+	margin:0;
+}
+article section ul li {
 	float:left;
 	overflow:hidden;
 	width:265px;
 	height:200px;
+	margin:0;
+	padding:0;
+	list-style:none;
 	border-right:2px solid #FFF;
 }
-section ul li.last {
+article section ul li.last {
 	border-right:none;
 }
 section p {

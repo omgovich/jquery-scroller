@@ -4,20 +4,20 @@ jQuery plugin that scrolls content based on mouse position.
 
 ## Demo
 
-[http://omgovich.github.com/jquery-scroller](http://omgovich.github.com/jquery-scroller)
+* [http://omgovich.github.com/jquery-scroller](http://omgovich.github.com/jquery-scroller)
 
 
 ## Installation:
 
 HTML:
 
-    <script src="path/to/jquery.js"></script>
-    <script src="path/to/jquery.scroller.js"></script>
+    <link href="path/to/jquery.scroller.css" type="text/css" rel="stylesheet" />
+    <script src="path/to/jquery.scroller.js" type="text/javascript"></script>
 
 JavaScript:
 
     $(function(){
-        $('#basic').scroller();
+        $('selector').scroller();
     });
 
 
