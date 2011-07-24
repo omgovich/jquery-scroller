@@ -59,7 +59,7 @@
 			//** Implementation
 	
 			// {EVENT} Mousemove
-			$body.mousemove(function(event){
+			$scroller.mousemove(function(event){
 				if (settings.direction == 'vertical') {
 					cursor.position = event.pageY - scroller.offset;
 				} else {
