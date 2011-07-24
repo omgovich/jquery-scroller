@@ -2,7 +2,10 @@
 
 Lightweight jQuery tabs plugin
 
-## [DEMO](http://omgovich.github.com/jquery-scroller)
+## Demo
+
+[http://omgovich.github.com/jquery-scroller](http://omgovich.github.com/jquery-scroller)
+
 
 ## Installation:
 
@@ -17,6 +20,7 @@ JavaScript:
         $('#basic ul').changer();
     });
 
+
 ## Tested in browsers:
 
 * Firefox: 3.5.19, 5.0
@@ -24,6 +28,7 @@ JavaScript:
 * Google Chrome: 12
 * Internet Explorer: 6, 8, 9
 * Safari: 5.0.5
+
 
 ## Dependencies:
 
