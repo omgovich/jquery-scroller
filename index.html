@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+	<meta charset="utf-8" />
+	<title>jQuery Scroller</title>
+	<!-- Stylesheet -->
+	<link href="demo/css/reset.css" rel="stylesheet" />
+	<link href="demo/css/fonts.css" rel="stylesheet" />
+	<link href="demo/css/highlight.css" rel="stylesheet" />
+	<link href="demo/css/template.css" rel="stylesheet" />
+	<link href="sources/jquery.scroller.css" rel="stylesheet" />
+	<!-- JavaScript -->
+	<script src="demo/js/html5.js"></script>
+	<script src="demo/js/highlight.js"></script>
+	<script src="demo/js/script.js"></script>
+	<script src="demo/js/jquery.js"></script>
+	<script src="sources/jquery.scroller.js"></script>
+	<script>
+		$(function(){
+			$('#basic').scroller();
+			$('#speed').scroller({ step:15 });
+			$('#fixed').scroller({ fixed: 'p' });
+			$('#vertical').scroller({ direction: 'vertical' });
+		});
+	</script>
+</head>
+<body>
+	
+	<!-- Header -->
+	<header>
+		<ul>
+			<li><span>Demo</span></li>
+			<li><a href="http://github.com/Omgovich/jquery-scroller">GitHub Repo</a></li>
+			<li><a href="http://twitter.com/Omgovich">Twitter</a></li>
+		</ul>
+	</header>
+	<!--/Header -->
+
+	<!-- Wrap -->
+	<div class="page-wrap">
+
+		<!-- Content -->
+		<article>
+
+			<h1>jQuery Scroller</h1>
+			
+			<p><strong>Scroller</strong> это плагин для <a href="http://jquery.com/" target="_blank">jQuery</a>, прокручивающий контент выбранного объекта по горизонтали и вертикали. Процесс прокрутки управляется <strong>положением курсора внутри объекта</strong>.</p>
+			<p>Буду рад любой критике и предложениям &mdash; <a href="mailto:omgovich@ya.ru">E-mail</a>, <a href="http://twitter.com/Omgovich" target="_blank">Twitter</a>, <a href="http://github.com/Omgovich/jquery-scroller" target="_blank">Github repo</a>.</p>
+			
+			<h2>Простой пример использования</h2>
+			<section id="basic">
+				<ul>
+					<li><img src="demo/upload/image-1.jpg" alt="Image" /></li>
+					<li><img src="demo/upload/image-2.jpg" alt="Image" /></li>
+					<li><img src="demo/upload/image-3.jpg" alt="Image" /></li>
+					<li><img src="demo/upload/image-4.jpg" alt="Image" /></li>
+					<li class="last"><img src="demo/upload/image-5.jpg" alt="Image" /></li>
+				</ul>
+			</section>
+			
+			<pre><code class="javascript">$('#basic').scroller();</code></pre>
+			
+			<pre><code>&lt;section id="basic"&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;img src="image-1.jpg" ... /&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;img src="image-2.jpg" ... /&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;img src="image-3.jpg" ... /&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;img src="image-4.jpg" ... /&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;img src="image-5.jpg" ... /&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/section&gt;</code></pre>
+			
+			
+			<h2>Изменение скорости</h2>
+			<section id="speed">
+				<ul>
+					<li><img src="demo/upload/girl-4.jpg" alt="Image" /></li>
+					<li><img src="demo/upload/girl-2.jpg" alt="Image" /></li>
+					<li><img src="demo/upload/girl-1.jpg" alt="Image" /></li>
+					<li><img src="demo/upload/girl-5.jpg" alt="Image" /></li>
+					<li class="last"><img src="demo/upload/girl-3.jpg" alt="Image" /></li>
+				</ul>
+			</section>
+			
+			<pre><code class="javascript">$('#speed').scroller({ step:15 });</code></pre>
+
+
+			<h2>Фиксированные объекты</h2>
+			<section id="fixed">
+				<p>Graham Smith<br /> Brand Re-versioning<br /><br /><br /><br /><br /> [Fixed]</p>
+				<ul>
+					<li><img src="demo/upload/logo-1.jpg" alt="Image" /></li>
+					<li><img src="demo/upload/logo-2.jpg" alt="Image" /></li>
+					<li><img src="demo/upload/logo-3.jpg" alt="Image" /></li>
+					<li><img src="demo/upload/logo-4.jpg" alt="Image" /></li>
+					<li class="last"><img src="demo/upload/logo-5.jpg" alt="Image" /></li>
+				</ul>
+			</section>
+			
+			<pre><code class="javascript">$('#fixed').scroller({ fixed: 'p' });</code></pre>
+
+			<pre><code>&lt;section id="basic"&gt;
+	&lt;p&gt;Graham Smith&lt;br /&gt; Brand Re-versioning ... &lt;/p&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;img src="image-1.jpg" ... /&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;img src="image-2.jpg" ... /&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;img src="image-3.jpg" ... /&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;img src="image-4.jpg" ... /&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;img src="image-5.jpg" ... /&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/section&gt;</code></pre>
+
+
+			<h2>Вертикальная прокрутка</h2>
+			<section id="vertical">
+				<ul>
+					<li><img src="demo/upload/image-1.jpg" alt="Image" /></li>
+					<li><img src="demo/upload/image-2.jpg" alt="Image" /></li>
+					<li><img src="demo/upload/image-3.jpg" alt="Image" /></li>
+					<li><img src="demo/upload/image-4.jpg" alt="Image" /></li>
+					<li class="last"><img src="demo/upload/image-5.jpg" alt="Image" /></li>
+				</ul>
+			</section>
+			
+			<pre><code class="javascript">$('#vertical').scroller({ direction: 'vertical' });</code></pre>
+
+
+
+			<h2>Установка плагина:</h2>
+			<p>В тэг <code>&lt;head&gt;</code> Вашей страницы:</p>
+			<pre><code>&lt;link href="path/to/jquery.scroller.css" type="text/css" rel="stylesheet" /&gt;
+&lt;script src="path/to/jquery.scroller.js" type="text/javascript"&gt;&lt;/script&gt;</code></pre>
+
+			<p>JavaScript:</p>
+			<pre><code class="javascript">$(function(){
+	$('selector').scroller();
+});</code></pre>
+
+			<h2>Протестирован в браузерах:</h2>
+			<p>
+				+ Firefox: <strong>3.5.19</strong>, <strong>5.0</strong><br />
+				+ Opera: <strong>11.50</strong><br />
+				+ Google Chrome: <strong>12</strong><br />
+				+ Internet Explorer: <strong>6</strong>, <strong>8</strong>, <strong>9</strong><br />
+				+ Safari: <strong>5.0.5</strong><br />
+			</p>
+			
+
+		</article>
+		<!--/Content -->
+
+	</div>
+	<!--/Wrap -->
+
+</body>
+</html>

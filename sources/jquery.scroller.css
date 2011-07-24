@@ -1,0 +1,28 @@
+/*
+ * jQuery Plugin: Changer
+ * Version 0.2
+ *
+ * Copyright (c) 2011 Shilov Vlad [Omgovich] (http://omgovich.ru)
+ * No copyrights or licenses. Do what you want!
+ * 
+ */
+.slide-pane, .vertical-slide-pane {
+	overflow:hidden;
+	position:relative;
+}
+.slide-pane .slide-wrap {
+	position:relative;
+	width:10000px;
+}
+.vertical-slide-pane .slide-wrap {
+	position:relative;
+	height:10000px;
+}
+.slide-pane .slide-data {
+	position:absolute;
+	left:0;
+}
+.vertical-slide-pane .slide-data {
+	position:absolute;
+	top:0;
+}
