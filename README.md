@@ -11,13 +11,13 @@ jQuery plugin that scrolls content based on mouse position.
 
 HTML:
 
-    <script src="path/to/jquery.js"></script>
-    <script src="path/to/jquery.scroller.js"></script>
+    <link href="path/to/jquery.scroller.css" type="text/css" rel="stylesheet" />
+    <script src="path/to/jquery.scroller.js" type="text/javascript"></script>
 
 JavaScript:
 
     $(function(){
-        $('#basic').scroller();
+        $('selector').scroller();
     });
 
 
