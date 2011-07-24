@@ -1,77 +1,156 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru-RU">
 <head>
-  <meta charset='utf-8'>
-
-  <title>Omgovich/jquery-scroller @ GitHub</title>
-
-  <style type="text/css">
-    body {
-      margin-top: 1.0em;
-      background-color: #84d78e;
-      font-family: Helvetica, Arial, FreeSans, san-serif;
-      color: #000000;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-    h1 { font-size: 3.8em; color: #7b2871; margin-bottom: 3px; }
-    h1 .small { font-size: 0.4em; }
-    h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #7b2871; }
-    h3 { text-align: center; color: #7b2871; }
-    a { color: #7b2871; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-    pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-  </style>
+	<meta charset="utf-8" />
+	<title>jQuery Scroller</title>
+	<!-- Stylesheet -->
+	<link href="demo/css/reset.css" rel="stylesheet" />
+	<link href="demo/css/fonts.css" rel="stylesheet" />
+	<link href="demo/css/highlight.css" rel="stylesheet" />
+	<link href="demo/css/template.css" rel="stylesheet" />
+	<link href="sources/jquery.scroller.css" rel="stylesheet" />
+	<!-- JavaScript -->
+	<script src="demo/js/html5.js"></script>
+	<script src="demo/js/highlight.js"></script>
+	<script src="demo/js/script.js"></script>
+	<script src="demo/js/jquery.js"></script>
+	<script src="sources/jquery.scroller.js"></script>
+	<script>
+		$(function(){
+			$('#basic').scroller();
+			$('#speed').scroller({ step:15 });
+			$('#fixed').scroller({ fixed: 'p' });
+			$('#vertical').scroller({ direction: 'vertical' });
+		});
+	</script>
 </head>
-
 <body>
-  <a href="http://github.com/Omgovich/jquery-scroller"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+	
+	<!-- Header -->
+	<header>
+		<ul>
+			<li><span>Demo</span></li>
+			<li><a href="http://github.com/Omgovich/jquery-scroller">GitHub Repo</a></li>
+			<li><a href="http://twitter.com/Omgovich">Twitter</a></li>
+		</ul>
+	</header>
+	<!--/Header -->
 
-  <div id="container">
+	<!-- Wrap -->
+	<div class="page-wrap">
 
-    <div class="download">
-      <a href="http://github.com/Omgovich/jquery-scroller/zipball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
-      <a href="http://github.com/Omgovich/jquery-scroller/tarball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
-    </div>
+		<!-- Content -->
+		<article>
 
-    <h1><a href="http://github.com/Omgovich/jquery-scroller">jquery-scroller</a>
-      <span class="small">by <a href="http://github.com/Omgovich">Omgovich</a></span></h1>
+			<h1>jQuery Scroller</h1>
+			
+			<p><strong>Scroller</strong> это плагин для <a href="http://jquery.com/" target="_blank">jQuery</a>, прокручивающий контент выбранного объекта по горизонтали и вертикали. Процесс прокрутки управляется <strong>положением курсора внутри объекта</strong>.</p>
+			<p>Буду рад любой критике и предложениям &mdash; <a href="mailto:omgovich@ya.ru">E-mail</a>, <a href="http://twitter.com/Omgovich" target="_blank">Twitter</a>, <a href="http://github.com/Omgovich/jquery-scroller" target="_blank">Github repo</a>.</p>
+			
+			<h2>Простой пример использования</h2>
+			<section id="basic">
+				<ul>
+					<li><img src="demo/upload/image-1.jpg" alt="Image" /></li>
+					<li><img src="demo/upload/image-2.jpg" alt="Image" /></li>
+					<li><img src="demo/upload/image-3.jpg" alt="Image" /></li>
+					<li><img src="demo/upload/image-4.jpg" alt="Image" /></li>
+					<li class="last"><img src="demo/upload/image-5.jpg" alt="Image" /></li>
+				</ul>
+			</section>
+			
+			<pre><code class="javascript">$('#basic').scroller();</code></pre>
+			
+			<pre><code>&lt;section id="basic"&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;img src="image-1.jpg" ... /&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;img src="image-2.jpg" ... /&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;img src="image-3.jpg" ... /&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;img src="image-4.jpg" ... /&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;img src="image-5.jpg" ... /&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/section&gt;</code></pre>
+			
+			
+			<h2>Изменение скорости</h2>
+			<section id="speed">
+				<ul>
+					<li><img src="demo/upload/girl-4.jpg" alt="Image" /></li>
+					<li><img src="demo/upload/girl-2.jpg" alt="Image" /></li>
+					<li><img src="demo/upload/girl-1.jpg" alt="Image" /></li>
+					<li><img src="demo/upload/girl-5.jpg" alt="Image" /></li>
+					<li class="last"><img src="demo/upload/girl-3.jpg" alt="Image" /></li>
+				</ul>
+			</section>
+			
+			<pre><code class="javascript">$('#speed').scroller({ step:15 });</code></pre>
 
-    <div class="description">
-      jQuery plugin that scrolls content based on mouse position
-    </div>
 
-    <h2>Authors</h2>
-<p>Shilov Vlad (Omgovich@ya.ru)<br/><br/>      </p>
-<h2>Contact</h2>
-<p>Shilov Vlad (Omgovich@ya.ru)<br/>      </p>
+			<h2>Фиксированные объекты</h2>
+			<section id="fixed">
+				<p>Graham Smith<br /> Brand Re-versioning<br /><br /><br /><br /><br /> [Fixed]</p>
+				<ul>
+					<li><img src="demo/upload/logo-1.jpg" alt="Image" /></li>
+					<li><img src="demo/upload/logo-2.jpg" alt="Image" /></li>
+					<li><img src="demo/upload/logo-3.jpg" alt="Image" /></li>
+					<li><img src="demo/upload/logo-4.jpg" alt="Image" /></li>
+					<li class="last"><img src="demo/upload/logo-5.jpg" alt="Image" /></li>
+				</ul>
+			</section>
+			
+			<pre><code class="javascript">$('#fixed').scroller({ fixed: 'p' });</code></pre>
+
+			<pre><code>&lt;section id="basic"&gt;
+	&lt;p&gt;Graham Smith&lt;br /&gt; Brand Re-versioning ... &lt;/p&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;img src="image-1.jpg" ... /&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;img src="image-2.jpg" ... /&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;img src="image-3.jpg" ... /&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;img src="image-4.jpg" ... /&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;img src="image-5.jpg" ... /&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/section&gt;</code></pre>
 
 
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="http://github.com/Omgovich/jquery-scroller/zipball/master">zip</a> or
-      <a href="http://github.com/Omgovich/jquery-scroller/tarball/master">tar</a> formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/Omgovich/jquery-scroller</pre>
-    </p>
+			<h2>Вертикальная прокрутка</h2>
+			<section id="vertical">
+				<ul>
+					<li><img src="demo/upload/image-1.jpg" alt="Image" /></li>
+					<li><img src="demo/upload/image-2.jpg" alt="Image" /></li>
+					<li><img src="demo/upload/image-3.jpg" alt="Image" /></li>
+					<li><img src="demo/upload/image-4.jpg" alt="Image" /></li>
+					<li class="last"><img src="demo/upload/image-5.jpg" alt="Image" /></li>
+				</ul>
+			</section>
+			
+			<pre><code class="javascript">$('#vertical').scroller({ direction: 'vertical' });</code></pre>
 
-    <div class="footer">
-      get the source code on GitHub : <a href="http://github.com/Omgovich/jquery-scroller">Omgovich/jquery-scroller</a>
-    </div>
 
-  </div>
 
-  
+			<h2>Установка плагина:</h2>
+			<p>В тэг <code>&lt;head&gt;</code> Вашей страницы:</p>
+			<pre><code>&lt;link href="path/to/jquery.scroller.css" type="text/css" rel="stylesheet" /&gt;
+&lt;script src="path/to/jquery.scroller.js" type="text/javascript"&gt;&lt;/script&gt;</code></pre>
+
+			<p>JavaScript:</p>
+			<pre><code class="javascript">$(function(){
+	$('selector').scroller();
+});</code></pre>
+
+			<h2>Протестирован в браузерах:</h2>
+			<p>
+				+ Firefox: <strong>3.5.19</strong>, <strong>5.0</strong><br />
+				+ Opera: <strong>11.50</strong><br />
+				+ Google Chrome: <strong>12</strong><br />
+				+ Internet Explorer: <strong>6</strong>, <strong>8</strong>, <strong>9</strong><br />
+				+ Safari: <strong>5.0.5</strong><br />
+			</p>
+			
+
+		</article>
+		<!--/Content -->
+
+	</div>
+	<!--/Wrap -->
+
 </body>
 </html>
