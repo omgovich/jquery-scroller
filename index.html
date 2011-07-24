@@ -21,6 +21,7 @@
 			$('#speed').scroller({ step:15 });
 			$('#fixed').scroller({ fixed: 'p' });
 			$('#vertical').scroller({ direction: 'vertical' });
+			$('#api').scroller();
 		});
 	</script>
 </head>
@@ -46,10 +47,23 @@
 			<h1>jQuery Scroller</h1>
 			
 			<p>Please address bugs and your suggestions to <a href="https://github.com/Omgovich/jquery-scroller/issues" target="_blank">Github issues</a> or <a href="mailto:omgovich@ya.ru">E-mail</a>.</p>
+			
+			<h2>Table of contents:</h2>
+			<ol>
+				<li><a href="#basic-part">Basic usage</a></li>
+				<li><a href="#speed-part">Change speed</a></li>
+				<li><a href="#fixed-part">Fixed objects</a></li>
+				<li><a href="#vertical-part">Vertical scrolling</a></li>
+				<li><a href="#api-part">API</a></li>
+				<li><a href="#browsers-part">Tested in browsers</a></li>
+				<li><a href="#dependencies-part">Dependencies</a></li>
+				<li><a href="#installation-part">Installation</a></li>
+				<li><a href="https://github.com/Omgovich/jquery-scroller/zipball/master">Download</a></li>
+			</ol>
 
 			<!-- ... -->
 
-			<h2>Basic usage</h2>
+			<h2 id="basic-part">Basic usage</h2>
 			<section id="basic">
 				<ul>
 					<li><img src="demo/upload/image-1.jpg" alt="Image" /></li>
@@ -74,7 +88,7 @@
 
 			<!-- ... -->
 
-			<h2>Change speed</h2>
+			<h2 id="speed-part">Change speed</h2>
 			<section id="speed">
 				<ul>
 					<li><img src="demo/upload/girl-4.jpg" alt="Image" /></li>
@@ -89,7 +103,7 @@
 
 			<!-- ... -->
 
-			<h2>Fixed objects</h2>
+			<h2 id="fixed-part">Fixed objects</h2>
 			<section id="fixed">
 				<p>Graham Smith<br /> Brand Re-versioning<br /><br /><br /><br /><br /> [Fixed]</p>
 				<ul>
@@ -116,7 +130,7 @@
 
 			<!-- ... -->
 
-			<h2>Vertical scrolling</h2>
+			<h2 id="vertical-part">Vertical scrolling</h2>
 			<section id="vertical">
 				<ul>
 					<li><img src="demo/upload/image-1.jpg" alt="Image" /></li>
@@ -131,33 +145,83 @@
 
 			<!-- ... -->
 
-			<h2>Tested in browsers:</h2>
-			<p>+ Firefox: <strong>3.5.19</strong>, <strong>5.0</strong></p>
-			<p>+ Opera: <strong>11.50</strong></p>
-			<p>+ Google Chrome: <strong>12</strong></p>
-			<p>+ Internet Explorer: <strong>6</strong>, <strong>8</strong>, <strong>9</strong></p>
-			<p>+ Safari: <strong>5.0.5</strong></p>
+			<h2 id="api-part">API</h2>
+			<section id="api">
+				<ul>
+					<li><img src="demo/upload/image-1.jpg" alt="Image" /></li>
+					<li><img src="demo/upload/image-2.jpg" alt="Image" /></li>
+					<li><img src="demo/upload/image-3.jpg" alt="Image" /></li>
+					<li><img src="demo/upload/image-4.jpg" alt="Image" /></li>
+					<li class="last"><img src="demo/upload/image-5.jpg" alt="Image" /></li>
+				</ul>
+			</section>
+			
+			<ul>
+				<li><button onclick="$('#api').data('scroller').disable();">Disable</button> / <button onclick="$('#api').data('scroller').enable();">Enable</button></li>
+				<li><button onclick="alert($('#api').data('scroller').getStatus());">Get status</button></li>
+				<li><button onclick="alert($('#api').data('scroller').getOffset());">Get offset</button></li>
+			</ul>
+			
+			<pre><code class="javascript">$('#api').scroller();
+
+// API requests:
+$('#api').data('scroller').disable();
+$('#api').data('scroller').enable();
+$('#api').data('scroller').getStatus(); // Boolean
+$('#api').data('scroller').getOffset(); // Number
+// OR
+var scroller = $('#api').data('scroller');
+scroller.disable();
+scroller.enable();
+scroller.getStatus();
+scroller.getOffset();</code></pre>
+
 
 			<!-- ... -->
 
-			<h2>Dependencies:</h2>
-			<p>Required <a href="http://jquery.com/" target="_blank">jQuery</a> 1.3+</p>
+			<h2 id="browsers-part">Tested in browsers</h2>
+			
+			<ul>
+				<li><strong>Firefox</strong>: 3.5.19,5.0</li>
+				<li><strong>Opera</strong>: 11.50</li>
+				<li><strong>Google Chrome</strong>: 12</li>
+				<li><strong>Internet Explorer</strong>: 6, 8, 9</li>
+				<li><strong>Safari</strong>: 5.0.5</li>
+			</ul>
 
 			<!-- ... -->
 
-			<h2>Installation:</h2>
-			<p>In <code>&lt;head&gt;</code> tag:</p>
-			<pre><code>&lt;link href="path/to/jquery.scroller.css" type="text/css" rel="stylesheet" /&gt;
+			<h2 id="dependencies-part">Dependencies</h2>
+			<ul>
+				<li>Required <a href="http://jquery.com/" target="_blank">jQuery</a> 1.3+</li>
+			</ul>
+
+			<!-- ... -->
+
+			<h2 id="installation-part">Installation</h2>
+			
+			<ol>
+				<li>
+					<p>In <code>&lt;head&gt;</code> tag:</p>
+<pre><code>&lt;link href="path/to/jquery.scroller.css" type="text/css" rel="stylesheet" /&gt;
 &lt;script src="path/to/jquery.scroller.js" type="text/javascript"&gt;&lt;/script&gt;</code></pre>
-			<p>JavaScript:</p>
-			<pre><code class="javascript">$(function(){
+				</li>
+				<li>
+					<p>JavaScript:</p>
+<pre><code class="javascript">$(function(){
 	$('selector').scroller();
 });</code></pre>
-
-			<!-- ... -->
-
-			<h2><a href="https://github.com/Omgovich/jquery-scroller/zipball/master">Download from GitHub</a></h2>
-
+				</li>
+				<li>
+					<p>CSS:</p>
+<pre><code>selector {
+	position: relative;
+	overflow: hidden;
+	height: <em>&lt;value&gt;</em>;
+}</code></pre>
+				</li>
+			</ol>
+			
 		</article>
 		<!--/Content -->
 

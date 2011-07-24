@@ -7,8 +7,8 @@
  * 
  */
 .slide-pane, .vertical-slide-pane {
-	overflow:hidden;
 	position:relative;
+	overflow:hidden;
 }
 .slide-pane .slide-wrap {
 	position:relative;
